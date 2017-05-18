@@ -100,9 +100,16 @@
 			set_motor(2,v2);
 			sleep1(0,50000);
 		}
-		//if (num_white_pixels>250){ //if this is not above 0 then we dont have a siginal
-			
-		//}
+		if (num_white_pixels>250 && P_signal <-100){ //this is at a multi option turn
+			v1 = -60;
+			v2 = 120;
+			printf("Direction = Left Turn\n");
+			printf("Proportional Signal = %d\n" , P_signal);
+			printf("Motor 1 = %d \n Motor 2 =%d \n", v1, v2) ;
+			set_motor(1,v1);
+			set_motor(2,v2);
+			sleep1(1,0);
+		
 		}
 		
 		
